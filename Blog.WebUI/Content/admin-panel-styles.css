@@ -1,0 +1,43 @@
+﻿.content {
+    margin-top: 30px;
+}
+.content > a {
+    font-size: 18px;
+    text-decoration: underline;
+}
+.best-article-results > span {
+    font-size: 20px;
+}
+.best-article-results table {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+.best-article-results td {
+    border: 1px solid #8fbe00;
+    padding: 10px 0px;
+}
+
+.best-article-results thead tr {
+    background-color: #f0f0f0;
+}
+
+.best-article-results tbody {
+    font-size: 15px;
+}
+
+.best-article-results tbody td {
+    border-right-style: dashed;
+    border-left: none;
+}
+
+.best-article-results tbody td:first-child {
+    border-left: 1px solid #8fbe00;
+}
+
+.best-article-results tbody td:last-child {
+    border-right: 1px solid #8fbe00;
+}

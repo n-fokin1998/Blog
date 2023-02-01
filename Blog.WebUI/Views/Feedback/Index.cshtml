@@ -1,0 +1,44 @@
+﻿@using Blog.WebUI.ViewModels
+@model List<FeedbackViewModel>
+
+@{
+    ViewBag.Title = "Гостевая";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/home-styles.css")
+    @Styles.Render("~/Content/feedback-styles.css")
+    @Styles.Render("~/Content/addarticle-styles.css")
+}
+
+<div class="head">
+    <div class="d1"><h1>Отзывы о сайте</h1></div>
+</div>
+
+<div class="line"></div>
+
+@{ 
+    FeedbackViewModel feedback = new FeedbackViewModel();
+    if (ViewBag.Feedback != null)
+    {
+        feedback = ViewBag.Feedback;
+    }
+}
+
+@using (Html.BeginForm("AddFeedback", "Feedback", FormMethod.Post, new { id="feedback-form" }))
+{
+    @Html.ValidationMessage("Content")
+    @Html.TextArea("Content", feedback.Content, htmlAttributes: new { @placeholder = "Ваш отзыв" })
+    <input type="submit" value="Добавить" />
+}
+
+<div class="line"></div>
+
+@foreach (FeedbackViewModel f in Model)
+{
+    <div class="feedback">
+        <div class="head">
+            <span class="title">@f.Author</span>
+            <span class="date">@f.Date.ToString()</span>
+        </div>
+        <span class="content">@f.Content</span>
+    </div>
+}

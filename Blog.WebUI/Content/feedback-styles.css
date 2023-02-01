@@ -1,0 +1,22 @@
+﻿.feedback {
+    margin-top: 20px;
+}
+
+    .feedback .head {
+        margin-bottom: 10px;
+    }
+
+    .feedback .title {
+        font-weight: bold;
+        font-size: 19px;
+        display: block;
+        float: left;
+    }
+
+    .feedback .date {
+        display: block;
+        float: right;
+    }
+#feedback-form {
+    margin-top: 40px;
+}

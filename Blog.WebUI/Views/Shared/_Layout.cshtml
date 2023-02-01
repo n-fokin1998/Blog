@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="heading">
+        @Html.Partial("_LoginPartial")
+    </div>
+    <header>
+        <div class="logo"><a href="/Home/Index/"><img src="~/Content/Images/logo.png" alt="logo" width="200" height="80" /></a></div>
+        <div class="blog"><a href="/Home/Index/"><h1>Your Diary</h1></a></div>
+    </header>
+    <div class="wrapper">
+        <aside>
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Главная", "Index", new { area = "", controller = "Home" })</li>
+                    <li>@Html.ActionLink("Гостевая", "Index", new { area = "", controller = "Feedback" })</li>
+                    <li>@Html.ActionLink("Анкетирование", "PassSurvey", new { area = "", controller = "Questionnaire" })</li>
+                </ul>
+            </nav>
+            @Html.Action("Vote", new { area = "", controller = "Home" })
+        </aside>
+        <section>
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div onclick="scroll(0,0); return false" class="up" title="Вверх"></div>
+        <span class="copyright">Copyright © deardiary.com 2017. All rights reserved.</span>
+    </footer>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/scripts/jquery-3.2.1.min.js")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/site-script.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

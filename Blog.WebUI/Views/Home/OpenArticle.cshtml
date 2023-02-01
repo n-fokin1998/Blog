@@ -1,0 +1,54 @@
+﻿@using Blog.Domain.Entities
+@model Article
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/home-styles.css")
+    @Styles.Render("~/Content/addarticle-styles.css")
+    @Styles.Render("~/Content/feedback-styles.css")
+    @Styles.Render("~/Content/open-article-styles.css")
+}
+
+<div class="head">
+    <div class="d1"><h1>@Model.Name</h1></div>
+    <div class="d2">@Model.Date.ToString()</div>
+</div>
+<div class="line"></div>
+<p>@Model.Content</p>
+<p class="tags">
+    @{
+        int i = 0;
+    }
+    @foreach(Tag tag in Model.Tags)
+    {
+        <span>
+            <a href="/Home/SearchByTag/@tag.Id">@tag.Name</a>@if (i != Model.Tags.Count() - 1){<span>, </span>}
+        </span>
+        i++;
+    }
+</p>
+<div class="line"></div>
+<span class="comments-title">Комментарии:</span>
+<div class="comment-wrapper">
+    @using (Html.BeginForm("AddComment", "Home", FormMethod.Post))
+    {
+        <input type="hidden" name="articleId" value="@Model.Id" />
+        <textarea name="Content" id="Text" placeholder="Комментарий"></textarea>
+        <input type="submit" value="Добавить" disabled />
+    }
+    @foreach (var feedback in Model.Feedbacks)
+    {
+        <div class="feedback">
+            <div class="head">
+                <span class="title">@feedback.Author</span>
+                <span class="date">@feedback.Date.ToString()</span>
+            </div>
+            <span class="content">@feedback.Content</span>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/validation-script.js")
+}

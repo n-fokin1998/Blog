@@ -1,0 +1,71 @@
+﻿.head {
+    width: 100%;
+}
+.head::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.head .d1 {
+    float: left;
+}
+
+.head .d2 {
+    float: right;
+    margin-top: 30px;
+}
+
+.head .d2 a {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.line {
+    border-top: 1px solid #ccc;
+    height: 0;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.article {
+    margin-top: 20px;
+}
+
+.article .head {
+    margin-bottom: 10px;
+}
+
+.article .title {
+    font-weight: bold;
+    font-size: 19px;
+    display: block;
+    float: left;
+}
+
+.article .date {
+    display: block;
+    float: right;
+}
+
+.article > a {
+    display: block;
+    width: 120px;
+}
+
+.article .open-article-button {
+    border: 1px solid #ccc;
+    width: inherit;
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 5px;
+    color: #2a6496;
+    font-size: 14px;
+}
+.open-article-button:hover {
+    cursor: pointer;
+    background-color: #7aa1bd;
+    color: #fff;
+}

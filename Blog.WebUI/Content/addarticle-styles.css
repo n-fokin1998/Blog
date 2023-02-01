@@ -1,0 +1,49 @@
+﻿section form {
+    margin-top: 20px;
+}
+
+input[type="text"], .article-text {
+    margin-bottom: 30px;
+}
+
+    input[type="text"]:focus, textarea:focus, select:focus {
+        outline: none;
+    }
+
+input[type="submit"] {
+    display: block;
+    border: 1px solid #ccc;
+    background-color: #fe9192;
+    color: #fff;
+    border-radius: 0;
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+    input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #bcb5b2;
+    }
+textarea {
+    width: 100%;
+    min-height: 100px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+input, textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 8px;
+    outline: none;
+    color: #000;
+    height: 30px;
+}
+.error-message {
+    color: red;
+}

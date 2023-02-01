@@ -1,0 +1,40 @@
+﻿input[type="submit"] {
+    display: block;
+    border: 1px solid #ccc;
+    background-color: #fe9192;
+    color: #fff;
+    border-radius: 0;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+    input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #bcb5b2;
+    }
+textarea {
+    width: 100%;
+    min-height: 50px;
+    max-width: 100%;
+    min-width: 100%;
+}
+textarea:focus {
+    outline: none;
+}
+input[type="radio"], input[type="checkbox"] {
+    vertical-align: top;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+form > label {
+    font-size: 17px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+ul label {
+    font-weight: 500;
+}
+    ul label:hover, input[type="radio"]:hover, input[type="checkbox"]:hover {
+        cursor: pointer;
+    }

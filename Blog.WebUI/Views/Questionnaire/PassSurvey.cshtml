@@ -1,0 +1,30 @@
+﻿@using Blog.WebUI.Helpers
+@model Blog.WebUI.ViewModels.QuestionnaireViewModel
+
+@{
+    ViewBag.Title = "Анкетирование";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/home-styles.css")
+    @Styles.Render("~/Content/questionnaire-styles.css")
+}
+
+<div class="head">
+    <div class="d1"><h1>Анкетирование</h1></div>
+</div>
+<div class="line"></div>
+@using (Html.BeginForm("PassSurvey", "Questionnaire", FormMethod.Post))
+{
+    @Html.LabelFor(Model => Model.Referrer)
+    @Html.CreateList(new string[] { "Интернет", "Реклама", "Знакомые" }, "radio", "Referrer")
+    @Html.LabelFor(Model => Model.Design)
+    @Html.CreateList(new string[] { "Да", "Нет", "Не уверен" }, "radio", "Design")
+    @Html.LabelFor(Model => Model.Recommend)
+    @Html.CreateList(new string[] { "Несомненно да", "Вероятно да", "Я не знаю", "Вероятно нет", "Несомненно нет" }, "radio", "Recommend")
+    @Html.LabelFor(Model => Model.Interesting)
+    @Html.CreateList(new string[] { "Интересно", "Скорее интересно", "Не слишком интересно", "Совсем не интересно" }, "radio", "Interesting")
+    @Html.LabelFor(Model => Model.Improvement)
+    @Html.CreateList(new string[] { "Комментарии к статьям", "Создание категорий статей", "Возможность регистрации", "Поиск по статьям" }, "checkbox", "improves[]")
+    @Html.LabelFor(Model => @Model.Comment)<br />
+    @Html.TextAreaFor(Model => Model.Comment)<br />
+    <input type="submit" value="Отправить" />
+}

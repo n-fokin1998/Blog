@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Domain", "Blog.Domain\Blog.Domain.csproj", "{E3E8812D-D97F-4B25-A721-030FCE83F54A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.WebUI", "Blog.WebUI\Blog.WebUI.csproj", "{6E6B2B13-2FE3-42AC-B03B-A3669664DB7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3E8812D-D97F-4B25-A721-030FCE83F54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E8812D-D97F-4B25-A721-030FCE83F54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E8812D-D97F-4B25-A721-030FCE83F54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E8812D-D97F-4B25-A721-030FCE83F54A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6B2B13-2FE3-42AC-B03B-A3669664DB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6B2B13-2FE3-42AC-B03B-A3669664DB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6B2B13-2FE3-42AC-B03B-A3669664DB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6B2B13-2FE3-42AC-B03B-A3669664DB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

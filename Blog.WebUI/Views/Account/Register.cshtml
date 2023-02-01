@@ -1,0 +1,31 @@
+﻿@model Blog.WebUI.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/home-styles.css")
+    @Styles.Render("~/Content/login-styles.css")
+    @Styles.Render("~/Content/register-styles.css")
+}
+
+<div class="head">
+    <div class="d1"><h1>Регистрация</h1></div>
+</div>
+
+<div class="line"></div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="login">
+    @Html.EditorFor(Model => Model.Email, new { htmlAttributes = new { placeholder = "Электронная почта*" } })
+    @Html.ValidationMessageFor(Model => Model.Email)<br /><br />
+    @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { placeholder = "Имя" } })<br /><br />
+    @Html.EditorFor(Model => Model.Surname, new { htmlAttributes = new { placeholder = "Фамилия" } })<br /><br />
+    @Html.EditorFor(Model => Model.Password, new { htmlAttributes = new { placeholder = "Пароль*" } })
+    @Html.ValidationMessageFor(Model => Model.Password)<br /><br />
+    @Html.EditorFor(Model => Model.PasswordConfirm, new { htmlAttributes = new { placeholder = "Повторите пароль*" } })
+    @Html.ValidationMessageFor(Model => Model.PasswordConfirm)
+</div>
+    <input type="submit" value="Зарегестрироваться" />
+}

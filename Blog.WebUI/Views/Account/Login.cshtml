@@ -1,0 +1,27 @@
+﻿@model Blog.WebUI.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Вход на сайт";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/home-styles.css")
+    @Styles.Render("~/Content/login-styles.css")
+}
+
+<div class="head">
+    <div class="d1"><h1>Вход</h1></div>
+</div>
+
+<div class="line"></div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="login">
+        @Html.EditorFor(Model => Model.Email, new { htmlAttributes = new { placeholder = "Электронная почта" } })
+        @Html.ValidationMessageFor(Model => Model.Email)
+        <span>@ViewBag.Message</span><br /><br />
+        @Html.EditorFor(Model => Model.Password, new { htmlAttributes = new { placeholder = "Пароль" } })
+        @Html.ValidationMessageFor(Model => Model.Password)
+    </div>
+    <input type="submit" value="Войти" />
+}

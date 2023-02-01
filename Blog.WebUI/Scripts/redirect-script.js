@@ -1,0 +1,1 @@
+﻿setTimeout(function () { window.location = "/Home/Index/"; }, 3000);

@@ -1,0 +1,7 @@
+﻿input[type="password"] {
+    margin-bottom: 20px;
+}
+input[type="submit"] {
+    margin-top: 10px;
+    width: 180px;
+}

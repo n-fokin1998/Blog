@@ -1,0 +1,12 @@
+﻿@using Blog.Domain.Entities
+@using Blog.WebUI.Helpers
+@model string[]
+
+<div class="voting">
+    <span>Голосование: «Лучшая статья недели»</span>
+    @using (Html.BeginForm("PassVoting", "Home", FormMethod.Post, new { id = "vote-form" }))
+    {
+        @Html.CreateList(Model, "radio", "Choise")
+        <input type="submit" id="vote-submit" value="Проголосовать" disabled />
+    }
+</div>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Новый тэг";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/home-styles.css")
+    @Styles.Render("~/Content/addarticle-styles.css")
+    @Styles.Render("~/Content/addtag-styles.css")
+}
+
+<div class="head">
+    <div class="d1"><h1>Новый тэг статьи</h1></div>
+</div>
+<div class="line"></div>
+@using (Html.BeginForm())
+{
+    <input type="text" name="newTagName" placeholder="Название тэга" />
+    <span class="error-message">@ViewBag.ErrorMessage</span><br />
+    <input type="submit" value="Добавить" />
+} 

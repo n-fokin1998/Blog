@@ -1,0 +1,38 @@
+﻿@using Blog.WebUI.ViewModels
+@model List<ArticleViewModel>
+
+@{
+    ViewBag.Title = "Dear Diary..";
+    @Styles.Render("~/Content/home-styles.css")
+}
+
+<div class="head">
+    <div class="d1"><h1>Лента статей</h1></div>
+    @if (Context.User.IsInRole("Admin"))
+    {
+        <div class="d2">@Html.ActionLink("Добавить статью", "AddArticle", new { area = "Admin", controller = "AdminPanel" })</div>
+    }
+</div>
+
+<div class="line"></div>
+
+@foreach (ArticleViewModel article in Model)
+{
+    <div class="article">
+        <div class="head">
+            @Html.ActionLink(article.Name, "OpenArticle", "Home", new { id = article.Id }, new { @class = "title" })
+            <span class="date">@article.Date.ToString()</span>
+        </div>
+        <span class="content">
+            @if (article.Content.Length >= 200)
+            {
+                @article.Content.Substring(0, 200)<text> . . .</text>
+            }
+            else
+            {
+                @article.Content
+            }
+         </span>
+        <a href="/Home/OpenArticle/@article.Id"><div class="open-article-button">Подробнее</div></a>
+    </div>
+}
